@@ -1,8 +1,17 @@
 import "./App.css";
-import MovieItem from "./components/MovieItem";
+
 
 function App() {
-  return <MovieItem />;
-}
+
+  
+
+  return (
+    <MovieList movies={movies} />
+  )
+   
+
+
+      
+ 
 
 export default App;

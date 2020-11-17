@@ -1,5 +1,5 @@
 // import SearchBar from "./SearchBar";
-// import { useState } from "react";
+import movieStore from "../components/stores/movieStore";
 
 /*** Components ***/
 import MovieItem from "./MovieItem";
@@ -7,26 +7,24 @@ import MovieItem from "./MovieItem";
 /*** Styles ***/
 import { ListWrapper } from "../styles";
 
-const MovieList = (props) => {
-  const [query, setQuery] = useState("");
-
-  const filteredMovies = props.movies.filter((movie) =>
-    movie.title.toLowerCase().includes(query.toLowerCase())
-  );
-  const movieList = filteredMovies.map((movie) => (
+const MovieList = ({ movieStore }) => {
+  const movieList = movies.map((movie) => (
     <MovieItem
-      movie={movie}
-      deleteMovie={props.deleteMovie}
       key={movie.id}
-      setMovie={props.setMovie}
+      movie={movie}
+      // deleteMovie={movie.deleteMovie}
     />
   ));
   return (
     <div className="container">
-      <SearchBar setQuery={setQuery} />
+      {/* <SearchBar setQuery={setQuery} /> */}
       <ListWrapper>{movieList}</ListWrapper>
     </div>
   );
 };
 
 export default MovieList;
+
+// const filteredMovies = movies.filter((movie) =>
+//     movie.title.toLowerCase().includes(query.toLowerCase())
+//   );
