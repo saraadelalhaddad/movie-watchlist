@@ -4,6 +4,7 @@ import { observer } from "mobx-react";
 import MovieItem from "./MovieItem";
 
 import movieStore from "../stores/movieStore";
+import AddButton from "./buttons/AddButton";
 
 const Watchlist = () => {
   const filteredMovie = movieStore.movies.filter((movie) => !movie.watched);
@@ -12,9 +13,12 @@ const Watchlist = () => {
   ));
 
   return (
-    <table class="table table-hover">
-      <tbody>{watchList}</tbody>
-    </table>
+    <>
+      <AddButton />
+      <table class="table table-hover">
+        <tbody>{watchList}</tbody>
+      </table>
+    </>
   );
 };
 

@@ -11,6 +11,7 @@ class MovieStore {
       movies: observable,
       deleteMovie: action,
       watchedMovie: action,
+      addMovie: action,
     });
   }
 
@@ -22,6 +23,10 @@ class MovieStore {
     const movie = this.movies.find((movie) => movie.id === movieId);
     movie.watched = !movie.watched;
     // movie.watched = movie.watched ? false : true;
+  };
+
+  addMovie = (newMovie) => {
+    newMovie.id = this.movies[this.movies.length - 1].id + 1;
   };
 }
 

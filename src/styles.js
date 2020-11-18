@@ -19,3 +19,7 @@ export const DeleteButtonStyled = styled.button`
 export const WatchedButtonStyled = styled.button`
   color: green;
 `;
+
+export const AddButtonStyled = styled.button`
+  color: blue;
+`;
