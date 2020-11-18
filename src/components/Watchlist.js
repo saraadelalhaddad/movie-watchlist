@@ -1,41 +1,20 @@
-/*** Styles ***/
-import { ListWrapper } from "../styles";
+import { observer } from "mobx-react";
 
 /*** Components ***/
 import MovieItem from "./MovieItem";
 
-/*** Data ***/
-import movies from "../movies";
+import movieStore from "../stores/movieStore";
 
 const Watchlist = () => {
-  const watchList = movies.map((movie) => (
+  const watchList = movieStore.movies.map((movie) => (
     <MovieItem key={movie.id} movie={movie} />
   ));
 
   return (
-    <ListWrapper>
-      {/* {watchList} */}
-      <table class="table table-hover">
-        <tbody>
-          <watchList>
-            <th scope="row">{watchList.title}</th>
-            <td>WatchedButton</td>
-            <td>DeleteButton</td>
-          </watchList>
-          <watchList>
-            <th scope="row">2</th>
-            <td>WatchedButton</td>
-            <td>DeleteButton</td>
-          </watchList>
-          <watchList>
-            <th scope="row">3</th>
-            <td>WatchedButton</td>
-            <td>DeleteButton</td>
-          </watchList>
-        </tbody>
-      </table>
-    </ListWrapper>
+    <table class="table table-hover">
+      <tbody>{watchList}</tbody>
+    </table>
   );
 };
 
-export default Watchlist;
+export default observer(Watchlist);

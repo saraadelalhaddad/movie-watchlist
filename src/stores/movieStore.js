@@ -1,7 +1,7 @@
-import { makeObservable, observable } from "mobx";
+import { makeObservable, observable, action } from "mobx";
 
 /*** Data ***/
-import movies from "./movies";
+import movies from "../movies";
 
 class MovieStore {
   movies = movies;
@@ -9,8 +9,13 @@ class MovieStore {
   constructor() {
     makeObservable(this, {
       movies: observable,
+      deleteMovie: action,
     });
   }
+
+  deleteMovie = (movieId) => {
+    this.movies = this.movies.filter((movie) => movie.id !== movieId);
+  };
 }
 
 const movieStore = new MovieStore();

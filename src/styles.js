@@ -12,6 +12,6 @@ export const ListWrapper = styled.div`
   display: flex;
 `;
 
-export const TableWatchList = styled.table`
-  align-item: center;
+export const DeleteButtonStyled = styled.button`
+  color: red;
 `;
