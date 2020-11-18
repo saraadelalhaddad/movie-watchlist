@@ -11,3 +11,7 @@ export const ListWrapper = styled.div`
   justify-content: center;
   display: flex;
 `;
+
+export const TableWatchList = styled.table`
+  align-item: center;
+`;
