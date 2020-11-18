@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { AddButtonStyled } from "../../styles";
 import movieStore from "../../stores/movieStore";
 
-const AddButton = ({ newMovie }) => {
+const AddButton = () => {
+  const [movie, setMovie] = useState({
+    title: "",
+  });
+
   const handleChange = (event) => {
-    setMovie({ ...movie, [event.target.title]: event.target.value });
+    setMovie({ ...movie, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    movieStore.addMovie(movie);
   };
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           name="title"
           value={movie.title}
@@ -16,10 +25,8 @@ const AddButton = ({ newMovie }) => {
           className="form-control"
           onChange={handleChange}
         />
+        <AddButtonStyled>Add</AddButtonStyled>
       </form>
-      <AddButtonStyled onClick={() => movieStore.addMovie(newMovie)}>
-        Add
-      </AddButtonStyled>
     </>
   );
 };

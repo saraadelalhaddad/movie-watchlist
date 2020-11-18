@@ -27,6 +27,7 @@ class MovieStore {
 
   addMovie = (newMovie) => {
     newMovie.id = this.movies[this.movies.length - 1].id + 1;
+    this.movies.push(newMovie);
   };
 }
 

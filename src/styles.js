@@ -23,3 +23,10 @@ export const WatchedButtonStyled = styled.button`
 export const AddButtonStyled = styled.button`
   color: blue;
 `;
+
+export const SearchBarStyled = styled.input`
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 40%;
+`;
