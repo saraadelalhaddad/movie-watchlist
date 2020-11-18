@@ -1,17 +1,14 @@
 import "./App.css";
 
+import Watchlist from "./components/Watchlist";
+// import Watched from "./components/Watched";
 
 function App() {
-
-  
-
   return (
-    <MovieList movies={movies} />
-  )
-   
-
-
-      
- 
+    <div>
+      <Watchlist />
+    </div>
+  );
+}
 
 export default App;

@@ -1,6 +1,6 @@
 import { makeObservable, observable } from "mobx";
 
-//Data
+/*** Data ***/
 import movies from "./movies";
 
 class MovieStore {
