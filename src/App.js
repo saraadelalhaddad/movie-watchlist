@@ -1,12 +1,13 @@
 import "./App.css";
 
 import Watchlist from "./components/Watchlist";
-// import Watched from "./components/Watched";
+import WatchedList from "./components/WatchedList";
 
 function App() {
   return (
     <div>
       <Watchlist />
+      <WatchedList />
     </div>
   );
 }

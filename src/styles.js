@@ -15,3 +15,7 @@ export const ListWrapper = styled.div`
 export const DeleteButtonStyled = styled.button`
   color: red;
 `;
+
+export const WatchedButtonStyled = styled.button`
+  color: green;
+`;

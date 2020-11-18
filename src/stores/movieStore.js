@@ -10,11 +10,15 @@ class MovieStore {
     makeObservable(this, {
       movies: observable,
       deleteMovie: action,
+      watchedMovie: action,
     });
   }
 
   deleteMovie = (movieId) => {
     this.movies = this.movies.filter((movie) => movie.id !== movieId);
+  };
+  watchedMovie = (movieId) => {
+    this.movies = this.movies.find((movie) => movie.id === movieId);
   };
 }
 
