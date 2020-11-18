@@ -9,6 +9,7 @@ import AddButton from "./buttons/AddButton";
 import SearchBar from "./SearchBar";
 
 import { useState } from "react";
+import { Table } from "react-bootstrap";
 
 const Watchlist = () => {
   const [query, setQuery] = useState("");
@@ -25,11 +26,18 @@ const Watchlist = () => {
 
   return (
     <>
-      <SearchBar setQuery={setQuery} />
+      <br />
       <AddButton />
-      <table class="table table-hover">
+      <br />
+      <Table striped bordered hover size="sm">
+        <thead>
+          <th>WatchList</th>
+          {/* <th>
+            <SearchBar setQuery={setQuery} />
+          </th> */}
+        </thead>
         <tbody>{watchList}</tbody>
-      </table>
+      </Table>
     </>
   );
 };

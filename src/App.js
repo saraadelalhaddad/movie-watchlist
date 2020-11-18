@@ -1,14 +1,24 @@
 import "./App.css";
 
 import Watchlist from "./components/Watchlist";
-import WatchedList from "./components/WatchedList";
+import Watched from "./components/Watched";
+
+import { Container, Row, Col } from "react-bootstrap";
 
 function App() {
   return (
-    <div>
-      <Watchlist />
-      <WatchedList />
-    </div>
+    <>
+      <Container>
+        <Row>
+          <Col>
+            <Watchlist />
+          </Col>
+          <Col>
+            <Watched />
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 }
 

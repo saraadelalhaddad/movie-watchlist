@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AddButtonStyled } from "../../styles";
+import { Button } from "react-bootstrap";
 import movieStore from "../../stores/movieStore";
 
 const AddButton = () => {
@@ -19,13 +19,14 @@ const AddButton = () => {
     <>
       <form onSubmit={handleSubmit}>
         <input
+          style={{ fontSize: "18pt", height: " 40px", width: "280px" }}
           name="title"
           value={movie.title}
           type="text"
           className="form-control"
           onChange={handleChange}
         />
-        <AddButtonStyled>Add</AddButtonStyled>
+        <Button variant="outline-primary">Add</Button>
       </form>
     </>
   );
