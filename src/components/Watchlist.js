@@ -6,7 +6,8 @@ import MovieItem from "./MovieItem";
 import movieStore from "../stores/movieStore";
 
 const Watchlist = () => {
-  const watchList = movieStore.movies.map((movie) => (
+  const filteredMovie = movieStore.movies.filter((movie) => !movie.watched);
+  const watchList = filteredMovie.map((movie) => (
     <MovieItem key={movie.id} movie={movie} />
   ));
 

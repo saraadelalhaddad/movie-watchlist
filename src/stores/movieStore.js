@@ -17,8 +17,11 @@ class MovieStore {
   deleteMovie = (movieId) => {
     this.movies = this.movies.filter((movie) => movie.id !== movieId);
   };
+
   watchedMovie = (movieId) => {
-    this.movies = this.movies.find((movie) => movie.id === movieId);
+    const movie = this.movies.find((movie) => movie.id === movieId);
+    movie.watched = !movie.watched;
+    // movie.watched = movie.watched ? false : true;
   };
 }
 
